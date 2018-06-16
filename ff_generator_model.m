@@ -1,16 +1,18 @@
 function [R] = ff_generator_model(all_times, targetOn, goCue, moveStarts, numNeus, numConds, xP, yP, colors)
 %% Method for generator responses from the generator model.
-% all_times: vector with time points
-% targetOn: target onset time
-% goCue: go cue time
-% moveStarts: movement start time
-% numNeus: number of neruons in the data.
-% numConds: number of conditions in the data.
-% xP: kinematics x position.
-% yP: kinematics y position.
-% colors: matrix of size conditions by 3 contain RGB values for different
-%   conditions.
-
+% Args:
+%   all_times: vector with time points
+%   targetOn: target onset time
+%   goCue: go cue time
+%   moveStarts: movement start time
+%   numNeus: number of neruons in the data.
+%   numConds: number of conditions in the data.
+%   xP: kinematics x position.
+%   yP: kinematics y position.
+%   colors: matrix of size conditions by 3 contain RGB values for different
+%     conditions.
+% Returns:
+%   R: model responses of size time x neurons x conditions.
 tprepStarts = targetOn+150;
 tprepEnds = targetOn+150+300;
 tmoveStarts = moveStarts-50;
